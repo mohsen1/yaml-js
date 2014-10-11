@@ -5,7 +5,11 @@ main:            ./lib/yaml
 repository:
   type:          git
   url:           http://github.com/connec/yaml-js.git
+scripts:
+  test: ./node_modules/cake/bin/cake build; ./node_modules/6to5/bin/6to5 es/lib/yaml.js --out-file lib/yaml.js; ./node_modules/cake/bin/cake test
 devDependencies:
+  6to5: ^1.7.14
+  cake: ^0.1.1
   coffee-script: 1.6.x
   plantation:    0.0.8
   squash:        0.0.12

@@ -19,10 +19,7 @@ var util = require('./util');
 /*
  * Scan a YAML stream and produce scanning tokens.
 */
-this.scan = function(stream, Loader) {
-  if (Loader === undefined)
-    Loader = loader.Loader;
-
+this.scan = function (stream, Loader = loader.Loader) {
   var loader = new Loader(stream);
   var result = [];
 
@@ -32,13 +29,11 @@ this.scan = function(stream, Loader) {
 
   return result;
 };
+
 /*
  * Parse a YAML stream and produce parsing events.
 */
-this.parse = function(stream, Loader) {
-  if (Loader === undefined)
-    Loader = loader.Loader;
-
+this.parse = function (stream, Loader = loader.Loader) {
   var loader = new Loader(stream);
   var results = [];
 

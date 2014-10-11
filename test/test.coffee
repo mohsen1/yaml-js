@@ -1,4 +1,4 @@
-yaml = require '..'
+yaml = require '../lib/yaml'
 
 spec =
   generic:    require './yaml-spec/spec'
